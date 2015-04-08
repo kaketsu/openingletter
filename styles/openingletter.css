@@ -1,0 +1,13 @@
+.wrapper{
+	display: grid;
+	grid-template-columns:100px 10px 100px ;
+	grid-template-rows: auto 10px auto;
+}
+.box{
+	background-color: #444;
+	color: #fff;
+	font-size: 28px;
+	padding: 20px;
+	text-align: center;
+
+}
