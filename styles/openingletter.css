@@ -1,13 +1,44 @@
-.wrapper{
-	display: grid;
-	grid-template-columns:100px 10px 100px ;
-	grid-template-rows: auto 10px auto;
+@font-face {
+	font-family: 'codropsicons';
+	src:url('../fonts/codropsicons/codropsicons.eot');
+	src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/codropsicons/codropsicons.woff') format('woff'),
+		url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
+		url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
-.box{
-	background-color: #444;
-	color: #fff;
-	font-size: 28px;
-	padding: 20px;
+body{
+	background: #222;
+	color: #f0f0f0;
+	font-family: 'Lato', Arial, sans-serif;
+}
+
+.wrapper{
+	position: relative;
+	width: 100%;
+}
+.letter{
+	position: relative;
 	text-align: center;
+	width:20%;
+	height: 299px;
+	float: left;
+	background: #888;
+	font-size: 12em;
+}
+.letter span{
+	position: relative;
+	font-weight: 600;
+	color: hsla(0, 0%, 0%, 0.6);
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+
+	perspective: 550px;
+	-webkit-perspective: 550px;
+}
+.letter span:before{
+	position: absolute;
+	content: attr(data-letter);
 
 }
