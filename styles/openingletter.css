@@ -28,9 +28,12 @@ body{
 	font-size: 12em;
 }
 .letter span{
+	display: inline-block;
+	line-height: 299px;
 	position: relative;
 	font-weight: 600;
 	color: hsla(0, 0%, 0%, 0.6);
+	text-align: center;
 	transform-style: preserve-3d;
 	-webkit-transform-style: preserve-3d;
 
@@ -40,5 +43,26 @@ body{
 .letter span:before{
 	position: absolute;
 	content: attr(data-letter);
+	left: 0px;
+	top: 0px;
+	z-index: 2;
+	-webkit-transition: all .3s;
+	transition: all .3s;
 
+}
+
+.to-letter-left{
+	background: #e74d3c; 
+}
+
+.to-letter-left span { 
+	text-shadow: 1px 4px 6px #e74d3c, 0 0 0 hsla(0, 0%, 0%, 0.3), 1px 4px 6px #e74d3c; 
+}
+
+
+
+.to-letter-left span:before {
+	-webkit-transform: scale(1.08,1) skew(0deg,1deg);
+	-ms-transform: scale(1.08,1) skew(0deg,1deg);
+	transform: scale(1.08,1) skew(0deg,1deg);
 }
