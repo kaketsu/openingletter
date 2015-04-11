@@ -1,46 +1,82 @@
+body{
+	background: url(../images/texture.png) repeat top right;
+}
+
 .wrapper{
 	display: block;
-	width: 200px;
-	height: 200px;
-	border: 1px solid #bbb;
-	margin: 20px;
-	float: left;
-}
-
-.box {
-  width: 100%;
-  height: 100%;
-  opacity: .75;
-}
-
-/* 
-father1
-*/
-.father1 {
-	perspective: 600px;
-	-webkit-transform-style: preserve-3d;
+	width: 100%;
+	max-width: 1200px;
 	
-	transform-style: preserve-3d;
+	margin: 0px;
+	padding: 20px 0px;
+	border-bottom: 3px dashed rgba(248,236,191,0.6);
 }
 
-.father1 .box{
-	background: darkred;
+.sub{
+	margin:20px 0px;
+}
+
+.example1 {
+	width: 100px;
+	height: 100px;
+	margin: 0px 50px;
+	border:1px solid #000;
+	perspective: 600px;
+
+}
+
+.example2{
+	width: 100px;
+	height: 100px;
+	margin: 0px 50px;
+	border:1px solid #000;
+}
+.example3{
+	width: 100px;
+	height: 100px;
+	margin: 0px 50px;
+	border:1px solid #000;
+}
+
+.box{
+	height: 100%;
+	width: 100%;
+}
+
+.example1 .box{
+	background: rgb(0, 146, 199);
 	transition: all 0.3 linear;
 	-webkit-transition: all 0.3s linear;
 }
 
-.father2 .box{
-	background: darkblue;
+.example2 .box{
+	background: rgb(159, 224, 246);
 	transition: all 0.3s leaner;
 	-webkit-transition: all 0.3s linear;
 }
 
-.father1 .box:hover{
+.example3 .box{
+	background: rgb(243, 229, 154);
+	transition: all 0.3 linear;
+	-webkit-transition: all 0.3s linear;
+}
+
+.example1 .box:hover{
 	transform: rotateY(45deg);
 }
 
-.father2 .box:hover{
+.example2 .box:hover{
 	transform: perspective(800px) rotateX(45deg);
 }
 
+.example3 .box:hover{
+	transform: perspective(800px) rotateZ(45deg);
+}
+
+.code{
+	
+}
+.code p{
+	color: rgb(69, 39, 22);
+}
 
