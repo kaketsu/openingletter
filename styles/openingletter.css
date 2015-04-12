@@ -26,6 +26,7 @@ body{
 	float: left;
 	background: #888;
 	font-size: 12em;
+	line-height: 1.5;
 }
 .letter span{
 	display: inline-block;
@@ -36,19 +37,65 @@ body{
 	text-align: center;
 	transform-style: preserve-3d;
 	-webkit-transform-style: preserve-3d;
-
-	perspective: 550px;
-	-webkit-perspective: 550px;
+	perspective: 600px;
+	-webkit-perspective: 600px;
+	line-height: 1;
+	z-index: 1;
 }
-.letter span:before{
-	position: absolute;
+.letter span:before,
+.letter span:after{
 	content: attr(data-letter);
+	position: absolute;
 	left: 0px;
 	top: 0px;
+	right: 0px;
+	bottom:0px;
 	z-index: 2;
 	-webkit-transition: all .3s;
 	transition: all .3s;
 
+}
+.letter span:before{
+	text-shadow:none;
+	color: hsla(0,0%,0%,0.2);
+}
+
+
+/*to-letter-left********************/
+/************************************/
+/************************************/
+.to-letter-left span:before,
+.to-letter-left span:after{
+	transform-origin: 0 50%;
+}
+
+/*
+黑色的阴影 hsla(0,0%,0%,0.2);
+*/
+.to-letter-left span:before{
+	transform: scale(1.05, 1) skew(0deg, 1deg);
+}
+
+/*
+第一个text-shsdow是为了负x轴的白色层次感
+第二个是想正x轴的的黑色阴影
+*/
+
+/*
+本体颜色的突出
+在hover时候，会改变颜色
+*/
+.to-letter-left span:after{
+	text-shadow: -1px 0px 0px hsla(360,100%,100%,0.1),
+				 3px 0px 1px hsla(0,0%,0%,0.4);
+	transform:rotateY(-15deg);
+}
+
+.to-letter-left:hover span:before{
+	transform: scale(0.85,1) skew(0deg,20deg);
+}
+.to-letter-left:hover span:after {
+	transform: rotateY(-40deg);
 }
 
 .to-letter-left{
@@ -56,13 +103,107 @@ body{
 }
 
 .to-letter-left span { 
-	text-shadow: 1px 4px 6px #e74d3c, 0 0 0 hsla(0, 0%, 0%, 0.3), 1px 4px 6px #e74d3c; 
+	text-shadow: 
+		1px 4px 6px #e74d3c, 
+		0 0 0 hsla(0, 0%, 0%, 0.3), 
+		1px 4px 6px #e74d3c; 
+}
+
+.to-letter-left span:after { 
+	color: #e74d3c; 
+}
+
+.to-letter-left:hover span:after { 
+	color: #ea6253; 
+}
+
+
+/*to-letter-top**********************/
+/************************************/
+/************************************/
+
+.to-letter-up span:after{
+	text-shadow:0px 3px 1px hsla(0,0%,0%,0.4),
+				0px -1px 0px hsla(360,100%,100%,0.1);
+}
+.to-letter-up span:before{
+
+}
+
+
+.to-letter-up{
+	perspective:500px;
+}
+
+.to-letter-up span:before,
+.to-letter-up span:after{
+	transform-origin:50% 0%;
+}
+.to-letter-up span:before{
+	transform: skew(4deg,0deg) scale(1,1.03);
+}
+
+.to-letter-up:hover span:before{
+	transform: skew(10deg,0deg) translateY(0.055em) scale(1,1.15);
+}
+
+.to-letter-up:hover span:after{
+	transform: translateY(0.025em) rotateX(30deg);
+}
+
+.to-letter-up { 
+	background: #ee7f72; 
+}
+.to-letter-up span { 
+	text-shadow: 1px 4px 6px #ee7f72, 
+				 0 0 0 hsla(0, 0%, 0%, 0.3), 
+				 1px 4px 6px #ee7f72; 
+}
+
+.to-letter-up span:after { 
+	color: #ee7f72; 
+}
+.to-letter-up:hover span:after { 
+	color: #f09389; 
+}
+
+
+/*to-letter-right**********************/
+/************************************/
+/************************************/
+
+.to-letter-right span:before{
+
+}
+
+.to-letter-right span:after{
+	text-shadow:-3px 0px 1px hsla(0,0%,0%,0.5),
+				1px 0px 1px hsla(360,100%,100%,0.1);
 }
 
 
 
-.to-letter-left span:before {
-	-webkit-transform: scale(1.08,1) skew(0deg,1deg);
-	-ms-transform: scale(1.08,1) skew(0deg,1deg);
-	transform: scale(1.08,1) skew(0deg,1deg);
+
+
+
+
+
+
+
+
+.to-letter-right { 
+	background: #e95949; 
 }
+
+.to-letter-right span:after { 
+	color: #e95949; 
+}
+
+.to-letter-right:hover span:after { 
+	color: #eb6e60; 
+}
+
+
+/*to-letter-bottom**********************/
+/************************************/
+/************************************/

@@ -6,7 +6,6 @@ body{
 	display: block;
 	width: 100%;
 	max-width: 1200px;
-	
 	margin: 0px;
 	padding: 20px 0px;
 	border-bottom: 3px dashed rgba(248,236,191,0.6);
@@ -22,6 +21,8 @@ body{
 	margin: 0px 50px;
 	border:1px solid #000;
 	perspective: 600px;
+	transform-style: preserve-3d;
+	float: left;
 
 }
 
@@ -30,12 +31,14 @@ body{
 	height: 100px;
 	margin: 0px 50px;
 	border:1px solid #000;
+	float: left;
 }
 .example3{
 	width: 100px;
 	height: 100px;
 	margin: 0px 50px;
 	border:1px solid #000;
+	float: left;
 }
 
 .box{
@@ -75,8 +78,83 @@ body{
 
 .code{
 	
+	width: 70%;
+	min-width: 400px;
+	float: left;
+}
+
+
+.clr{
+	clear: both;
 }
 .code p{
 	color: rgb(69, 39, 22);
+	font-size: 15px;
+	display: block;
+}
+.code code{
+	padding: 10px;
+	margin-top: 10px;
+	background: rgba(0,0,0,0.2);
 }
 
+
+.example4{
+	width: 100px;
+	height: 100px;
+	margin: 0px 50px;
+	border:1px solid #000;
+	float: left;
+	perspective: 600px;
+}
+
+.example4 .box{
+	background: rgb(243, 181, 155);
+	transition: all 0.3s linear;
+	-webkit-transition: all 0.3s linear;
+	transform-origin: 0% 50%;
+}
+
+.example4 .box:hover{
+	transform: rotateY(-45deg);
+}
+
+
+
+.example5{
+	width: 100px;
+	height: 100px;
+	margin: 0px 50px;
+	border:1px solid #000;
+	float: left;
+	perspective: 600px;
+}
+.example5 .box{
+	background: rgb(242, 156, 156);
+	transition: all 0.3s linear;
+	-webkit-transition: all 0.3s linear;
+	transform-origin: 50% 100%;
+}
+
+.example5 .box:hover{
+	transform: rotateX(45deg);
+}
+
+
+.example6{
+	width: 100px;
+	height: 100px;
+	margin: 0px 50px;
+	border:1px solid #000;
+	float: left;
+}
+
+.example6 .box{
+	background: rgb(242, 156, 156);
+	transition: all 0.3s linear;
+	-webkit-transition: all 0.3s linear;
+}
+
+.example6 .box:hover{
+	transform: skew(0deg,20deg);
+}
