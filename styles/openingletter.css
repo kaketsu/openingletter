@@ -126,9 +126,6 @@ body{
 	text-shadow:0px 3px 1px hsla(0,0%,0%,0.4),
 				0px -1px 0px hsla(360,100%,100%,0.1);
 }
-.to-letter-up span:before{
-
-}
 
 
 .to-letter-up{
@@ -173,6 +170,7 @@ body{
 /************************************/
 
 .to-letter-right span:before{
+	transform:skew(3deg,0deg) scale(1,1.02);
 
 }
 
@@ -181,15 +179,20 @@ body{
 				1px 0px 1px hsla(360,100%,100%,0.1);
 }
 
+.to-letter-right span:after,
+.to-letter-right span:before{
+	transform-origin:100% 50%;
+}
+.to-letter-right span:after{
+	transform: rotateY(15deg);
+}
 
-
-
-
-
-
-
-
-
+.to-letter-right:hover span:after{
+	transform: rotateY(40deg);
+}
+.to-letter-right:hover span:before{
+	transform: skew(0deg,-20deg) scale(0.85,1);
+}
 
 .to-letter-right { 
 	background: #e95949; 
@@ -207,3 +210,34 @@ body{
 /*to-letter-bottom**********************/
 /************************************/
 /************************************/
+
+.to-letter-down {
+	background: #e95949; 
+}
+.to-letter-down span:after{
+	color:#e95949;
+}
+.to-letter-down:hover span:after{
+	color: #eb6e60;
+}
+.to-letter-down span:after{
+	text-shadow:0px -3px 1px hsla(0,0%,0%,0.4),
+				0px 1px 0px hsla(360,100%,100%,0.1);
+}
+
+
+.to-letter-down span:before{
+	transform:skew(-2deg,0deg) scale(1,1.03) translateY(-0.01em);
+}
+
+.to-letter-down span:before,
+.to-letter-down span:after{
+	transform-origin:50% 100%;
+}
+
+.to-letter-down:hover span:before{
+	transform: skew(-10deg,0deg) scale(1,0.85);
+}
+.to-letter-down:hover span:after{
+	transform:rotateX(-40deg);
+}
